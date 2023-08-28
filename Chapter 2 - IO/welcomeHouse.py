@@ -60,6 +60,23 @@ turtle.forward(roof)
 turtle.end_fill()
 
 # Continue with the house
+turtle.setheading(SOUTH)
+turtle.pendown()
+turtle.fillcolor("salmon")
+turtle.begin_fill()
+turtle.forward(HOUSE_SIDE)
+turtle.left(RIGHT_ANGLE)
+turtle.forward(roof)
+turtle.left(RIGHT_ANGLE)
+turtle.forward(HOUSE_SIDE)
+turtle.left(RIGHT_ANGLE)
+turtle.forward(roof)
+turtle.end_fill()
+
+# Create a welcome message
+turtle.penup()
+turtle.goto(CENTER_X, CENTER_Y)
+turtle.write("WELCOME TO GABRIEL'S HOUSE!")
 
 #Keep the window open
 turtle.done()
