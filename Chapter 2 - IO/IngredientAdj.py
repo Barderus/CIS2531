@@ -20,10 +20,12 @@ COOKIES = 48
 #Prompt user for quantity of cookies
 userCookies = int(input("Enter the amount of cookies you would like to make: "))
 
+# Calculations
 ttlSugar = (CUPS_OF_SUGAR * userCookies) / COOKIES
 ttlButter = (CUPS_OF_BUTTER * userCookies) / COOKIES
 ttlFlour = (CUPS_OF_FLOUR * userCookies) / COOKIES
 
+# Print the output
 print(f"You will need:\n\t{ttlSugar:.3f} cups of sugar \
         \n\t{ttlButter:.3f} cups of butter \
             \n\t{ttlFlour:.3f} cups of flour")
