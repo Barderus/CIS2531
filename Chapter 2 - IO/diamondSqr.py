@@ -9,13 +9,9 @@ Under the design, add the following statement: "A colorful diamond square by Gab
 
 import turtle
 
-NORTH = 90
-SOUTH = 270
-EAST = 0
-WEST = 180
+#named constants
 CENTER_X = 0
 CENTER_Y = 0
-
 
 #Set window characteristics
 turtle.setup(500, 500, 500, 0)
