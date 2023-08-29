@@ -29,3 +29,13 @@ ttlFlour = (CUPS_OF_FLOUR * userCookies) / COOKIES
 print(f"You will need:\n\t{ttlSugar:.3f} cups of sugar \
         \n\t{ttlButter:.3f} cups of butter \
             \n\t{ttlFlour:.3f} cups of flour")
+
+
+#Sample run:
+'''
+Enter the amount of cookies you would like to make: 120
+You will need:
+        3.750 cups of sugar
+        2.500 cups of butter
+        6.875 cups of flour
+'''
