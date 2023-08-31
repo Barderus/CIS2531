@@ -6,7 +6,7 @@ Prog: diamondSqr.py
 Description: Create a drawing of a diamond with the colors blue, black, green, and red.
 Under the design, add the following statement: "A colorful diamond square by Gabriel dos Reis"
 '''
-
+ 
 import turtle
 
 #named constants
