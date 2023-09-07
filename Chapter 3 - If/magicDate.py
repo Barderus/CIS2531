@@ -12,3 +12,10 @@ Otherwise, it should display a message saying the date is not magic.
 userDay = int(input("Enter a day: "))
 userMonth = int(input("Enter a month: "))
 userYear = int(input("Enter a year: "))
+
+multiDayMonth = userDay * userMonth
+
+if multiDayMonth == userYear:
+    print("This date is magical!")
+else:
+    print("Nah, this date is not magical!")

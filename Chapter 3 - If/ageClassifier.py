@@ -14,3 +14,14 @@ If the person is at least 13 years old, but less than 20 years old, he or she is
 If the person is at least 20 years old, he or she is an adult.
 '''
 userChoice = int(input("Enter a person's age: "))
+
+if userChoice < 1:
+    print("This person is an infant!")
+elif userChoice >= 1 and userChoice < 13:
+    print("This person is a child!")
+elif userChoice >= 13 and userChoice < 20:
+    print("This person is a teenager!")
+elif userChoice >= 20 and userChoice < 65:
+    print("This person is an adult!")
+else:
+    print("This person is an elderly!")
