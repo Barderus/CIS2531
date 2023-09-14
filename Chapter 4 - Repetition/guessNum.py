@@ -11,16 +11,20 @@ guesses the number.
 '''
 import random
 
+# random function to get a random integer between 1 and 100
 random_int = random.randint(1,100) 
-print(random_int)
+#print(random_int)
 
 while True:
     user_guess = int(input("Enter your number: "))
     
+    # If the user guess a number less than random number, it says it's a too low
     if user_guess < random_int:
         print("You guessed too low!")
+    # If the user guess a number higher than random number, it says it's too high
     elif user_guess > random_int:
         print("You guessed too high!")
+    # If the user is right, it displays a congratulation message
     else:
         print("Din din! You guessed it right!")
         break

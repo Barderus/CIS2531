@@ -10,6 +10,7 @@ to prompt if user wants  to calculate another comission.
 keep_going = "y"
 
 while keep_going:
+    # Get input from user
     sales = float(input("Enter the amount of sales: "))
     commisionRate = float(input("Enter the comission rate: "))
     
