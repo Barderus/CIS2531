@@ -22,30 +22,35 @@ turtle.setup(SCREEN_WIDTH, SCREEN_HEIGHT)
 turtle.hideturtle()
 turtle.speed(0)
 
-# Prompt, read, and validate the number of columns (3 to 12)
 columns = 0
-while True:
-    try:
-        columns = int(input("Enter the number of columns (3 to 12): "))
-        if 3 <= columns <= 12:
-            break
-        else:
-            print("Please enter a valid number between 3 and 12.")
-    except ValueError:
-        print("Invalid input. Please enter a valid number.")
 
-# Prompt, read, and validate three different colors
+# Loop to validate user input
+while True:
+    # Prompt user for the number of columns
+    user_input = input("Enter the number of columns (3 to 12): ")
+    # Give the variable columns the user input
+    columns = int(user_input)
+    # Input validation
+    if 3 <= columns <= 12:
+        break
+    else:
+        print("Please enter a valid number between 3 and 12.")
+
+
+
+# Prompt user for the colors
 color1 = input("Enter the color for the first row: ")
 color2 = input("Enter the color for the second row: ")
 color3 = input("Enter the color for the third row: ")
 
+# Check if any colors are alike
 while color1 == color2 or color1 == color3 or color2 == color3:
     print("Please make sure the colors are different for each row.")
     color1 = input("Enter the color for the first row: ")
     color2 = input("Enter the color for the second row: ")
     color3 = input("Enter the color for the third row: ")
 
-# Calculate the radius of circles based on the number of columns
+# Calculate the radius of circles
 circle_radius = 50 / columns
 
 # Loop through each row
