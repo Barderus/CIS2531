@@ -7,6 +7,7 @@ Description:
 
 # Importing random number functions
 
+import time
 import random
 
 #Named constants for "fair"
@@ -21,6 +22,7 @@ def main():
     number_tails = 0
     
     # toss the coin
+    start = time.time()
     for counter in range(0, num_tosses):
         # Generate random number
         rand_num = random.randint(1,2)
@@ -40,6 +42,10 @@ def main():
     # Print the results
     print("There were", format(number_heads/ num_tosses, ".2%"), "heads")
     print("There were", format(number_tails/ num_tosses, ".2%"), "tails")
+    end = time.time()
+    elapsed_time = end - start
+    print("It took", elapsed_time, "seconds")
+    
 
 # Call the main function
 main()

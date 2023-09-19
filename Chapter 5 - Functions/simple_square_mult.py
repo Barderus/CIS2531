@@ -9,6 +9,7 @@ import random
 
 
 # Global constants
+ANIMATION_SPEED = 10
 EAST = 0
 RIGHT_ANGLE = 90
 MIN_SIDE = 10
@@ -17,6 +18,7 @@ DELTA = 10
 MIN_COORD = -200
 MAX_COORD = 200
 
+turtle.speed(ANIMATION_SPEED)
 def get_rand_size(min_val, max_val, step_val):
     ''' return side length in the range of min_val, max_val, and step_val'''
     return random.randrange(min_val, max_val, step_val)
