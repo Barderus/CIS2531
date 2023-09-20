@@ -12,7 +12,7 @@ import random
 NUM_CIRCLES = 36
 RADIUS = 150
 ANGLE = 10
-ANIMATION_SPEED = 0
+ANIMATION_SPEED = 0.5
 
 # Set the animation speed
 turtle.speed(ANIMATION_SPEED)

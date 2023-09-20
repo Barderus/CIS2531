@@ -103,6 +103,7 @@ EAST = 0
 NORTH = 90
 WEST = 180
 SOUTH = 270
+EXTERIOR_ANGLE = 72
 
 def postion_turtle(x_coord, y_coord):
     ''' Position turtle at given location
@@ -179,8 +180,70 @@ def draw_circle(color, radius):
     turtle.begin_fill()
     turtle.circle(radius)
     turtle.end_fill()
-
-  
+    
+def draw_rombus(color, side, angle):
+    '''
+    Draw filled rombus.
+    
+    Parameters:
+    color --> String fill color
+    side --> radius in pixels
+    angle --> angle in degrees
+    
+    Description:
+    Draw color filled circle with given diameter
+    at current location.
+    '''
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    turtle.forward(side)
+    turtle.right(angle)
+    turtle.forward(side)
+    turtle.right(WEST - angle)
+    turtle.forward(side)
+    turtle.right(angle)
+    turtle.forward(side)
+    turtle.end_fill()
+       
+def draw_pentagon(color, side):
+    '''
+    Draw filled circle.
+    
+    Parameters:
+    color --> String fill color
+    side --> side in pixels
+    
+    Description:
+    Draw color filled circle with given diameter
+    at current location.
+    '''
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    for x in range(5):
+        turtle.forward(side)
+        turtle.right(EXTERIOR_ANGLE)
+    turtle.end_fill()
+    
+    
+def draw_hexagon(color, side):
+    '''
+    Draw filled circle.
+    
+    Parameters:
+    color --> String fill color
+    side --> side in pixels
+    
+    Description:
+    Draw color filled circle with given diameter
+    at current location.
+    '''
+    turtle.fillcolor(color)
+    turtle.begin_fill()
+    for x in range(6):
+        turtle.forward(side)
+        turtle.right(60)
+    turtle.end_fill()
+    
 # Test out module functions
 if __name__ == "__main__":
     postion_turtle(-200,200)
@@ -189,6 +252,10 @@ if __name__ == "__main__":
     draw_right_triangle("blue", 100)
     postion_turtle(200,-200)
     draw_circle("green", 50)
-
-turtle.done()
+    postion_turtle(-200,-200)
+    draw_rombus("yellow", 100, 60)
+    postion_turtle(0,0)
+    draw_pentagon("purple", 100)
+    postion_turtle(-100, 250)
+    draw_hexagon("orange", 100)
 
