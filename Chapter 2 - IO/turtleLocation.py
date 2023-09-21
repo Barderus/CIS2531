@@ -1,7 +1,7 @@
 import turtle
 
 #Set window characteristics
-turtle.setup(500, 500, 500, 0)
+turtle.setup(600, 600, 2000, 5)
 turtle.title("My house")
 turtle.bgcolor("Sky blue")
 
