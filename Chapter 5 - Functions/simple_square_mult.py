@@ -6,6 +6,7 @@ Description:
 '''
 import turtle
 import random
+import simple_graphics as sg
 
 
 # Global constants
@@ -36,7 +37,7 @@ def position_turtle(xcoord, ycoord):
     turtle.goto(xcoord, ycoord)
     turtle.setheading(EAST) # make sure turtle is facing East
     turtle.pendown() 
-    
+
 # Draw a square
 def draw_square(color, length):
     ''' Draw a square of given color and size'''

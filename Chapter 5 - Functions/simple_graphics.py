@@ -247,15 +247,24 @@ def draw_hexagon(color, side):
 # Test out module functions
 if __name__ == "__main__":
     postion_turtle(-200,200)
-    draw_square("red", 100)
+    draw_square("red", 50)
     postion_turtle(200,200)
-    draw_right_triangle("blue", 100)
+    draw_right_triangle("blue", 50)
     postion_turtle(200,-200)
     draw_circle("green", 50)
     postion_turtle(-200,-200)
-    draw_rombus("yellow", 100, 60)
+    draw_rombus("yellow", 50, 30)
+    postion_turtle(100, 100)
+    draw_pentagon("purple", 50)
+    postion_turtle(-100, 100)
+    draw_hexagon("orange", 50)
+    postion_turtle(100,-100)
+    draw_right_triangle("gold2", 50)
+    postion_turtle(-100,-100)
+    draw_pentagon("teal", 50)
     postion_turtle(0,0)
-    draw_pentagon("purple", 100)
-    postion_turtle(-100, 250)
-    draw_hexagon("orange", 100)
+    draw_hexagon("pink", 50)
+turtle.done()
+
+    
 

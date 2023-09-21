@@ -71,6 +71,7 @@ def main():
     else:
         print("Error! Invalid menu selection.")
         exit()
+    turtle.hideturtle()
     turtle.done()
    
 # Call the main function
