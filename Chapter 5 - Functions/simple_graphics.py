@@ -6,6 +6,9 @@ Includes the following functions:
     -> draw_square(color, length)
     -> draw_right_triangle(color, length)
     -> draw_circle(color, length)
+    -> draw_rombus(color, length, angle)
+    -> draw_pentagon(color, length)
+    -> draw_hexagon(color, length)
 Includes the following global constants:
     -> COLORS
     -> RIGHT_ANGLE
@@ -14,6 +17,12 @@ Includes the following global constants:
     -> WEST
     -> SOUTH
     
+'''
+'''
+Author: Gabriel dos Reis
+Date: 9/20/2023
+Program: simple_graphics.py
+Description: Expand the module to add three functions that allow the user to draw a rombus, pentagon, and hexagon.
 '''
 
 # Import statements used for drawing functions
@@ -97,6 +106,7 @@ COLORS = ['snow', 'ghost white', 'white smoke', 'gainsboro', 'floral white', 'ol
     'gray75', 'gray76', 'gray77', 'gray78', 'gray79', 'gray80', 'gray81', 'gray82', 'gray83',
     'gray84', 'gray85', 'gray86', 'gray87', 'gray88', 'gray89', 'gray90', 'gray91', 'gray92',
     'gray93', 'gray94', 'gray95', 'gray97', 'gray98', 'gray99']
+
 # Global constants for positioning
 RIGHT_ANGLE = 90
 EAST = 0
@@ -163,7 +173,6 @@ def draw_right_triangle(color, length):
     turtle.forward(hypothenuse)
     turtle.end_fill()
     
-
 def draw_circle(color, radius):
     '''
     Draw filled circle.
@@ -181,69 +190,69 @@ def draw_circle(color, radius):
     turtle.circle(radius)
     turtle.end_fill()
     
-def draw_rombus(color, side, angle):
+def draw_rombus(color, length, angle):
     '''
     Draw filled rombus.
     
     Parameters:
     color --> String fill color
-    side --> radius in pixels
+    length --> length in pixels
     angle --> angle in degrees
     
     Description:
-    Draw color filled circle with given diameter
-    at current location.
+    Draw color filled rombus with given given angles between 90
+    and 180 and sides of equal length and at current location.
     '''
     turtle.fillcolor(color)
     turtle.begin_fill()
-    turtle.forward(side)
+    turtle.forward(length)
     turtle.right(angle)
-    turtle.forward(side)
+    turtle.forward(length)
     turtle.right(WEST - angle)
-    turtle.forward(side)
+    turtle.forward(length)
     turtle.right(angle)
-    turtle.forward(side)
+    turtle.forward(length)
     turtle.end_fill()
        
-def draw_pentagon(color, side):
+def draw_pentagon(color, length):
     '''
     Draw filled circle.
     
     Parameters:
     color --> String fill color
-    side --> side in pixels
+    length --> length in pixels
     
     Description:
-    Draw color filled circle with given diameter
+    Draw color filled pentagon with 5 straight sides
     at current location.
     '''
     turtle.fillcolor(color)
     turtle.begin_fill()
     for x in range(5):
-        turtle.forward(side)
+        turtle.forward(length)
         turtle.right(EXTERIOR_ANGLE)
     turtle.end_fill()
-    
-    
-def draw_hexagon(color, side):
+      
+def draw_hexagon(color, length):
     '''
     Draw filled circle.
     
     Parameters:
     color --> String fill color
-    side --> side in pixels
+    length --> length in pixels
     
     Description:
-    Draw color filled circle with given diameter
+    Draw color filled hexagon with 6 straight sides
     at current location.
     '''
     turtle.fillcolor(color)
     turtle.begin_fill()
     for x in range(6):
-        turtle.forward(side)
+        turtle.forward(length)
         turtle.right(60)
     turtle.end_fill()
-    
+
+'''
 # Test out module functions
 if __name__ == "__main__":
     postion_turtle(-200,200)
@@ -258,13 +267,7 @@ if __name__ == "__main__":
     draw_pentagon("purple", 50)
     postion_turtle(-100, 100)
     draw_hexagon("orange", 50)
-    postion_turtle(100,-100)
-    draw_right_triangle("gold2", 50)
-    postion_turtle(-100,-100)
-    draw_pentagon("teal", 50)
-    postion_turtle(0,0)
-    draw_hexagon("pink", 50)
-turtle.done()
+'''
 
     
 
