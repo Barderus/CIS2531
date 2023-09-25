@@ -1,0 +1,3 @@
+SBUX:Starbucks:80:67.8
+FB:Facebook:28:161.8
+H&M:H&M:12:56.8
