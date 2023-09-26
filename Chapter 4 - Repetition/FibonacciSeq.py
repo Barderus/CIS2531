@@ -10,7 +10,7 @@ INITIAL_NUMBER = 0
 SECOND_NUMBER = 1
 
 # Fibonacci number starts at 0
-for x in range(20):
+for x in range(10):
     print(INITIAL_NUMBER)
     sequence = INITIAL_NUMBER + SECOND_NUMBER # firstNum of the sequence + the second number
     INITIAL_NUMBER = SECOND_NUMBER # The first number now is the second number
