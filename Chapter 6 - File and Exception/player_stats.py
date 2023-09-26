@@ -23,40 +23,75 @@ Prompt and read the above data and write it out to a sequential ASCII text file.
 FIELD_DELIMITER = ":"
 
 def main():
-    
-    # Prompt user for the file name
-    filename = input("Enter the file name: ")
-    
-    # Open the file for output
-    outfile = open(filename, "w")
-    
-    while True:
-        try:
-            # Prompt user for how many players to record
-            player_rec = int(input("How many player statistics would you like to record?: "))
-            print()
+    try:
+        # Prompt user for the file name
+        filename = input("Enter the file name: ")
+        
+        # Prompt user for how many players statistic to record
+        # Try/Except checks for non-integer numbers or characters.
+        while True:
+            try: 
+                player_rec = int(input("How many player statistics would you like to record?: "))
             
+                if player_rec >= 0:
+                    break  # Exit the loop if a valid positive integer is entered
+                else:
+                    print("ERROR! Number of players cannot be negative.")
+            except ValueError:
+                print("ERROR! Please enter a valid integer for the number of players.")
+        
+        # Open the file for output using a 'with' statement
+        with open(filename, "w") as outfile:
             for r in range(player_rec):
                 player_name = input("Enter player name: ")
-                games_played = int(input("Enter the number of games played: "))
-                home_runs = int(input("Enter the number of home runs: "))
-                battling_avg = float(input("Enter the battling average: "))
                 
-                # Create a delineated record of player data
+                # Prompt for number of games played until a valid positive integer is entered
+                while True:
+                    try:
+                        games_played = int(input("Enter the number of games played: "))
+                        if games_played >= 0:
+                            break
+                        else:
+                            print("ERROR! Games played cannot be negative.")
+                    except ValueError:
+                        print("ERROR! Please enter a valid integer for games played.")
+                
+                # Prompt for number of home runs until a valid positive integer is entered
+                while True:
+                    try:
+                        home_runs = int(input("Enter the number of home runs: "))
+                        if home_runs >= 0:
+                            break
+                        else:
+                            print("ERROR! Home runs cannot be negative.")
+                    except ValueError:
+                        print("ERROR! Please enter a valid integer for home runs.")
+                
+                # Prompt for battling average until a valid positive float or integer is entered
+                while True:
+                    try:
+                        battling_avg = float(input("Enter the batting average: "))
+                        if battling_avg >= 0:
+                            break
+                        else:
+                            print("ERROR! Batting average cannot be negative.")
+                    except ValueError:
+                        print("ERROR! Please enter a valid float for batting average.")
+                
+                # Create a delimited record of player data
                 player_str = player_name + FIELD_DELIMITER + str(games_played) + FIELD_DELIMITER + str(home_runs) + FIELD_DELIMITER + str(battling_avg)
             
-                # Write record out to file
-                outfile.write(player_str + "\n")      
-        except ValueError:
-            print("ERROR!")           
-        else:
-            # Close the file
-            outfile.close()
-            print("Records written to", filename + ".")
-            break            
-        finally:
-            print("Exiting the program.")
+                # Write the record out to the file
+                outfile.write(player_str + "\n")
+        
+        print("Records written to", filename)
+    except IOError:
+        print("Error: Invalid filename or unable to write to the file.")
+    except Exception as e:
+        print("An unexpected error occurred:", e)
+    finally:
+        print("Exiting program...")
 
-# Call the main function
+# Call main
 if __name__ == '__main__':
     main()

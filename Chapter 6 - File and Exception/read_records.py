@@ -30,10 +30,8 @@ def main():
         -> 10 characters for price(right aligned)
         
     '''
-    print(str(format("Ticker Symbol", str(TICKER_WIDTH) + "s") + 
-              format("Company Name", str(CMP_WIDTH) + "s") + 
-              format("YTD %", ">" + str(YTD_WIDTH) + "s") +
-              format("Closing Price", ">" + str(PRICE_WIDTH) + "s")))
+
+    
     
     #Open the file for reading
     infile = open(file_name, 'r')
