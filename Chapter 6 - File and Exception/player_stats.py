@@ -1,4 +1,8 @@
 '''
+Author: Gabriel dos Reis
+Date: 9/27/2023
+Program: player_stats.py
+Description:
 Create a program to save the following player statistics for the
 home baseball team:
     Number of players --> Integer
@@ -28,7 +32,7 @@ def main():
         filename = input("Enter the file name: ")
         
         # Prompt user for how many players statistic to record
-        # Try/Except checks for non-integer numbers or characters.
+        # Try/Except checks for non-positive integer numbers or characters.
         while True:
             try: 
                 player_rec = int(input("How many player statistics would you like to record?: "))
@@ -77,18 +81,20 @@ def main():
                             print("ERROR! Batting average cannot be negative.")
                     except ValueError:
                         print("ERROR! Please enter a valid float for batting average.")
-                
-                # Create a delimited record of player data
-                player_str = player_name + FIELD_DELIMITER + str(games_played) + FIELD_DELIMITER + str(home_runs) + FIELD_DELIMITER + str(battling_avg)
-            
-                # Write the record out to the file
-                outfile.write(player_str + "\n")
-        
-        print("Records written to", filename)
     except IOError:
         print("Error: Invalid filename or unable to write to the file.")
     except Exception as e:
         print("An unexpected error occurred:", e)
+    else:
+        # Create a delimited record of player data
+        player_str = player_name + FIELD_DELIMITER + str(games_played) + FIELD_DELIMITER + str(home_runs) + FIELD_DELIMITER + str(battling_avg)
+            
+        # Write the record out to the file
+        outfile.write(player_str + "\n")
+        
+        print("Records written to", filename)
+
+        
     finally:
         print("Exiting program...")
 
