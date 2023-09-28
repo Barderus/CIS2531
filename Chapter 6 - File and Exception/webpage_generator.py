@@ -19,7 +19,7 @@ def main():
     # Filename
     filename = "index.html"
     input_num = int(input("How many people would you like to have?: "))
-    
+
     for p in range(input_num):
         user_name = input("What's your name?: ")
         user_descr = input("Enter a sentence that describe yourself: ")
@@ -39,7 +39,7 @@ def main():
             """
         outfile.write(html_template)
     outfile.close()
-    
+
     file = codecs.open(filename, "r", "utf-8")
     webbrowser.open(filename)
 

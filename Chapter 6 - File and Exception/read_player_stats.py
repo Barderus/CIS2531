@@ -15,9 +15,9 @@ Player name should be displayed left aligned and the player statistics right ali
 '''
 # Named constant
 FIELD_DELIMITIER = ":"
-TICKER_WIDTH = 20
-CMP_WIDTH = 10
-YTD_WIDTH = 20
+NAME_WIDTH = 20
+GAME_WIDTH = 10
+HRUN_WIDTH = 20
 PRICE_WIDTH =20
 
 def main():
@@ -32,9 +32,9 @@ def main():
             print(err)
 
         else:
-            print(str(format("Player Name", str(TICKER_WIDTH) + "s") + 
-            format("Games Played", str(CMP_WIDTH) + "s") + 
-            format("Home Runs", ">" + str(YTD_WIDTH) + "s")))
+            print(str(format("Player Name", str(NAME_WIDTH) + "s") + 
+            format("Games Played", str(GAME_WIDTH) + "s") + 
+            format("Home Runs", ">" + str(HRUN_WIDTH) + "s")))
             # Counter for number of records
             num_players = 0
             #Accumulator to keep track of total games played
@@ -58,9 +58,9 @@ def main():
                 total_games += games_played
                 total_battling += batting_average
                 
-                # Display data in columnar format
+            # Display data in columnar format
             # Display data in columnar format using f-strings
-            print(f"{name:<{TICKER_WIDTH}}{games_played:>{CMP_WIDTH}}{home_runs:>{YTD_WIDTH}}")
+            print(f"{name:<{NAME_WIDTH}}{games_played:>{GAME_WIDTH}}{home_runs:>{HRUN_WIDTH}}")
             print()
             
             # Display the summary statistics
