@@ -10,8 +10,13 @@ def main():
     # Filename
     filename = "steps.txt"
     
+    # Accumulator
+    steps = 0
+    
     infile = open(filename, "r")
     
-    
+    for line in infile:
+        steps += line
+        
     
 main()
