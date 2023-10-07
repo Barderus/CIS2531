@@ -9,14 +9,14 @@ DAYS_OF_WEEK = 7
 def bar_chart(sales_list):
     # Create a list with the x coordinates of each bar's left edge
     x_labels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    left_edges = [0, 10, 20, 30, 40, 50, 60]
+    #left_edges = [100, 200, 300, 400, 500, 600, 700]
     
     
     # Create a list with the height of each bar
     heights = sales_list.copy()
     
     # Create a variable for the bar width
-    bar_width = 12
+    bar_width = 8
    
     # Add a title
     plt.title("Total sales of the week")
@@ -26,15 +26,7 @@ def bar_chart(sales_list):
     plt.ylabel("Weekdays")
      
     # Build the bar chart
-    plt.bar(left_edges, heights, bar_width, color=("r", "g", "b", "y", "k", "r", "g"))
-    
-    # CUstomize the tick marks
-    plt.xticks(left_edges, x_labels)
-    plt.yticks([2000, 1500, 1000, 500, 250], 
-               ["2k", "1.5k", "1k", "500", "250"])
-    
-    # Set y axis limits
-    plt.ylim(bottom=5000)
+    plt.bar(x_labels, heights, color=("b", "g", "r", "m", "y", "k", "c"))
     
     # Display the bar graph
     plt.show()
@@ -44,6 +36,7 @@ def main():
     total = 0
     
     sales_list = []
+    #  Need to add try block for input validation
     for days in range(1,(DAYS_OF_WEEK+1)):
         if days == 1:
             sales = float(input("How much did you sell on Monday?:  "))
@@ -65,10 +58,6 @@ def main():
     print(f"The total this week was: {total:.2f}")
 
     bar_chart(sales_list)
-    
 
-            
-        
-    
 if __name__ == "__main__":
     main()
