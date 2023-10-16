@@ -31,3 +31,10 @@ print('{:^30s} \n{:^30,d} \n{:^30,.3f}'.format(myString, myInt, myFloat))
 print()
 
 print(format(23.456, "30,.2%"))
+
+'''
+            # Display     Display DJIA closing price averages for YYYY
+            #               Month           Average
+            #               =====           =======
+            print(f"{message}{year}\n{monthMsg:>30}\t{avgMsg:>30}\n{delimiterMsg:>30}\t{delimiterMsg:>30}")
+'''
