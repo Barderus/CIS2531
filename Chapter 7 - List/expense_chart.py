@@ -9,7 +9,7 @@ Create a text file that contains your expenses for last month in the following c
     Misc 
 '''
 import matplotlib.pyplot as plt
-
+'''
 def pieChart():
     # Create a list of head counts for given year across age ranges
     headCount = [5732, 10745, 6635, 791]
@@ -22,6 +22,8 @@ def pieChart():
     plt.title("Expenses of the month")
     
     plt.show()
+
+'''
 
 def writeGas(file):
     
@@ -68,8 +70,8 @@ def menu():
           "2. Clothes Spending",
           "3. Food Spending",
           "4. Miscellaneous Spending",
-          "5. Clear files",
-          "6. Exit"))
+          "5. Exit"
+          ))
     return userInput
        
 def main():
@@ -90,13 +92,11 @@ def main():
     elif userChoice == 4:
         writeMisc(miscFile)
     elif userChoice == 5:
-        # Clear everything in the file
-    elif userChoice == 6:
         exit()
     else:
         print("ERROR!")
         
-    pieChart()
+    #pieChart()
     
 if __name__ == "__main__":
     main()
