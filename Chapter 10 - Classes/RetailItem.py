@@ -1,6 +1,6 @@
 '''
 Author: Gabriel dos Reis
-Date: 11/2/2023
+Date: 11/7/2023
 Program: RetailItem.py
 Description:
 Write a class named  that holds data about an item in a retail store. 

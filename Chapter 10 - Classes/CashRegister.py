@@ -1,6 +1,6 @@
 '''
 Author: Gabriel dos Reis
-Date: 11/2/2023
+Date: 11/7/2023
 Program: CashRegister.py
 Description:
 Create a CashRegister class that can be used with the RetailItem class. 
