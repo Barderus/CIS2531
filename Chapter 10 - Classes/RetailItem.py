@@ -18,6 +18,12 @@ Item #3      Shirt              20                  24.95
 
 class RetailItem():
     def __init__(self, description = "", units = 0, price = 0.0):
+        '''
+        Constructor that receivers description, units and price as an argument.
+            Description is a string type
+            Units is an integer type
+            Price is a float number type
+        '''
         self.__description = description
         self.__units = units
         self.__price = price
@@ -45,6 +51,9 @@ class RetailItem():
         self.__price = price
         
     def __str__(self):
+        '''
+        Method to display the description, units and price of a product.
+        '''
         display_string = str('{:20} {:12} {:15}'.format(self.__description, str(self.__units), str(self.__price)))
          
         return display_string

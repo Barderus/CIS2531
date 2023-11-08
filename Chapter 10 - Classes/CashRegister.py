@@ -17,33 +17,38 @@ to check out, the program should display a list of all the items he or she has s
 
 class CashRegister():
     
+    # Class constant that represents 7.5% of tax
     TAX_RATE = 0.075
 
     def __init__(self):
+        '''
+        Constructor that initializes a list to hold the retail items
+        '''
         self.items = []
     
+    # Method that appends a new item to the items list
     def purchase_item(self, item):
         self.items.append(item)
     
+    # Method that calculates the price of the purchase
     def get_total(self):
         total = 0
         for item in self.items:
             total += item.price * item.units
         return total
     
+    # Method that calculates the tax amount to pay by calling the get_total function.
     def get_tax_amt(self):
         total_price = self.get_total()
         tax_amt = total_price * CashRegister.TAX_RATE
         return tax_amt
     
+    # Method that displays the items in the items list
     def show_items(self):
         for item in self.items:
             print(item)
-
-    def get_items(self):
-        return self.items.copy()
-
-        
+    
+    # Method that clears the list
     def clear(self):
         self.items = []
  
