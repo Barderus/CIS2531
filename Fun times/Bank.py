@@ -72,7 +72,7 @@ class Customer():
         self.__acc_type = acc_type
         
     def __str__(self):
-        display_str = f"Account type: {self.__acc_type}\nAccount Numberr: {self.__acc_num}\nValid Thru: {self.__exp_date}\tSec code: {self.__cv}\n\t{self.__name}"
+        display_str = f"Account type: {self.__acc_type}\nAccount Number: {self.__acc_num}\nValid Thru: {self.__exp_date}\tSec code: {self.__cv}\n\t{self.__name}"
         
         return display_str
 
@@ -85,19 +85,21 @@ class Checkings(Customer):
     '''
     def __init__(self, name, acc_num, exp_date, cv, acc_type, balance = 0.0):
         '''
-        Constructor class that have as arguments:
-            name : String --> Customer name
-            acc_num : String --> Bank Account number
-            exp_date : String --> Account expire date
-            cv : String --> Security code
-            acc_type : String --> Account type            
-            balance: Float -> Represents user's balance
+            Constructor class that have as arguments:
+                name : String --> Customer name
+                acc_num : String --> Bank Account number
+                exp_date : String --> Account expire date
+                cv : String --> Security code
+                acc_type : String --> Account type            
+                balance: Float -> Represents user's balance
         '''
     
         # Call the superclass __init__ method and pass the required arguments.
         Customer.__init__(self,name, acc_num, exp_date, cv, acc_type)
         
         self.__balance = balance
+        # Dictionary to store checkings account (acc_num : [list of information])
+        self.__checkings_acc = {}
         # Dictionary to store transactions (date: [list of transactions])
         self.__transaction = {}
     
@@ -133,9 +135,10 @@ class Checkings(Customer):
 
   
 class Savings(Customer):
+    
     '''
-    Savings class that allows the user to see their balance, deposit money on the account, 
-    withdraw money off the account, and calculate the interest rate. It is a subclass of Customer.
+        Savings class that allows the user to see their balance, deposit money on the account, 
+        withdraw money off the account, and calculate the interest rate. It is a subclass of Customer.
     '''
     def __init__(self, name, acc_num, exp_date, cv, acc_type, balance = 0.0, interest_rate = 0.0):
         '''
@@ -154,6 +157,9 @@ class Savings(Customer):
         
         self.__balance = balance
         self.__interest_rate = interest_rate
+        
+        # Dictionary to store checkings account (acc_num : [list of information])
+        self.__checkings_acc = {}
         # Dictionary to store transactions (date: [list of transactions])
         self.__transaction = {}
     
