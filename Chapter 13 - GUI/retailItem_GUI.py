@@ -74,7 +74,7 @@ class RetailItem_GUI():
         self.bold_check = tkinter.Checkbutton(self.buttonFrame, text = "Bold",
                                               variable = self.font_weight)
         
-        # Rdio button for font family
+        # Radio button for font family
         self.font_fam = tkinter.StringVar()
         self.font_fam.set(RetailItem_GUI.COURIER_FONT)
         self.courier_button = tkinter.Radiobutton(self.displayFrame, 

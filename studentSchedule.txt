@@ -1,0 +1,8 @@
+ID: 12345 Name: Gabriel dos Reis GPA: 3.95
+
+Courses:
+    ECONO 2201:Macroeconomics (3 credit hours)
+    ENGLI 1102:English Composition (3 credit hours)
+    CIS 1230:Database Application (3 credit hours)
+    CIS 2531:Intro to Python (4 credit hours)
+    MANAG 2170:Project Management (3 credit hours)

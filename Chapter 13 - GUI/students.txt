@@ -1,0 +1,39 @@
+Gabriel dos Reis:60181:3.95:
+CIS2531-Intro to Python, CIS1230 - Database Application, 
+MANAG2170 - Project Management, 
+ECONO2201 - Macroeconomy, ENGLI1102 - 
+English Composition 2
+
+Fiona Carruth:60129:3.90:
+BIOLO1110 - Enviromental Biology, 
+BIOLO 1100 - Survey of Biology, 
+CHEMI1551 - Principles of Chemistry 1, 
+ART 1100 - Introduction to Visual Art and Culture
+
+Matthew Waterman:12894:2.8:
+SPEEC1100 - Fundamentals of Speech Communication, 
+ENGLI 1102 - English Compostion 2, 
+HISTO 1160 - World Civilization since 1300, 
+HMNT1102 - Introduction to Humanities
+
+Jill Valentine:82741:4.0:
+POLS1101 - American Politics, 
+PSYCH2240 - Social Psychology, 
+BIOLO2151 - Cell Biology, 
+MATH1635 - Statistics
+
+Neil Osborn:10923:3.75:
+SOCIO1100 - Introduction to Sociology, 
+GEOGR1140 - Urban Geography, MPTV1154 - 
+Film as Literature, ENGLI1145 - Film History
+
+Ryan Marshall:97191:3.89:
+MICRO1420 - Microbiology, 
+BIOLO1110 - Enviromental Biology, Z
+OOLO2260 - Invertebrate Zoology, 
+CHEMI2551 - Organic Chemistry
+
+Scott Summers:18233:4.0:
+EARTH1120 - Introduction to Astronomy, 
+PHYSI1150 - Energy and Society, 
+MATH2231 - Calculus and Analytic Geometry
