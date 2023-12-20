@@ -4,20 +4,26 @@ Rock Paper Scissors using Tkinter
 import tkinter as tk
 import tkinter.messagebox
 from tkinter import ttk
+import random
 
 class Game_GUI:
     ROCK_PATH = r"C:\Users\gabe_\OneDrive\Pictures\Coding\rock1.png"
     PAPER_PATH = r"C:\Users\gabe_\OneDrive\Pictures\Coding\paper1.png"
     SCISSORS_PATH = r"C:\Users\gabe_\OneDrive\Pictures\Coding\scissors1.png"
     
+
+    
     def __init__(self):
+        
+            self.player_score = 0
+            self.pc_score = 0
 
             # Create the main window
             self.main_window = tk.Tk()
-            self.main_window.title("Menu GUI")
+            self.main_window.title("ROCK PAPER SCISSOR!")
 
             # Size of the window
-            self.main_window.geometry("400x450+550+200")
+            self.main_window.geometry("350x550+550+200")
             
             # Create the game header
             self.head_label = tk.Label(self.main_window, text = "Rock Paper Scissors Game", font = ("Helvetica", 16))
@@ -104,27 +110,32 @@ class Game_GUI:
             self.scoreFrame = tk.Frame(self.main_window)
             self.scoreFrame.grid(row= 9, column= 2, rowspan= 7, columnspan= 7) # Pack the score frame
             
-            self.score_label = tk.Label(text= "Scores: ", font= "Helvetica 16 bold")
+            self.score_label = tk.Label(text= "Scores ", font= "Helvetica 16 bold")
+            
+            # Label and Entry widget to hold the player's scores
             self.playerScore_label = tk.Label(text= "Player:")
             self.p1Score_entry = tk.Entry(self.scoreFrame, width= 5, cursor= "left_ptr")
             self.p1Score_entry.configure(state= tk.DISABLED, disabledbackground= "white", disabledforeground= "black")
 
-            self.PCScore_label = tk.Label(text = "PC: ")
+            # Label and Entry widget to hold the PC's scores
+            self.PCScore_label = tk.Label(text = "Player | PC ")
             self.pc1Score_entry = tk.Entry(self.scoreFrame, width= 5, cursor= "left_ptr")
             self.pc1Score_entry.insert(0,0)
             self.pc1Score_entry.configure(state= tk.DISABLED, disabledbackground= "white", disabledforeground= "black")
-
             
+            # Label to hold the match result
+            self.match_result_label = tk.Label(text=" ", font="Helvetica 14 bold")
+            self.match_result_label.config(fg= "red")
+            
+
             
             # Pack in the frame
             self.score_label.grid(row= 8, column= 2, padx= 10, pady= 10)
-            self.playerScore_label.grid(row= 9, column= 1, padx= 5, pady= 10)
-            self.p1Score_entry.grid(row = 9, column= 2, padx= 5, pady= 10)
-            self.PCScore_label.grid(row = 9, column= 2, padx= 5, pady= 5)
-            self.pc1Score_entry.grid(row= 9, column= 3, padx= 5, pady= 5)
-            
-            
-            
+            #self.playerScore_label.grid(row= 9, column= 1, padx= 5, pady= 10)
+            self.p1Score_entry.grid(row = 10, column= 2, padx= 5, pady= 10)
+            self.PCScore_label.grid(row = 9, column= 2, padx= 5, pady= 50)
+            self.pc1Score_entry.grid(row= 10, column= 3, padx= 5, pady= 5)
+            self.match_result_label.grid(row= 10, column=2, padx=10, pady= 10)
             
             # Create a menu bar at top of window
             self.menubar = tk.Menu(self.main_window)
@@ -138,24 +149,118 @@ class Game_GUI:
             self.help_menu.add_command(label = "About",
                                     command = self.show_about)
             
-            
-            
             # Start with the window event loop
             self.main_window.mainloop()
             
     def play(self):
-        pass
+        '''
+        '''
+        self.pc_choose()
+        result = self.select_winner()
+        self.match_result_label.config(text = result)
+        
+        self.p1Score_entry.configure(state= tk.NORMAL)
+        self.pc1Score_entry.configure(state= tk.NORMAL)
+        
+
+        
+        if result == "YOU WIN :D":
+            self.player_score += 1
+        elif result == "YOU LOOSE :(":
+            self.pc_score += 1
+            
+        self.p1Score_entry.delete(0, tk.END)
+        self.p1Score_entry.insert(0,self.player_score)
+        
+        self.pc1Score_entry.delete(0, tk.END)
+        self.pc1Score_entry.insert(0, self.pc_score)
+           
+        self.p1Score_entry.configure(state= tk.DISABLED)
+        self.pc1Score_entry.configure(state= tk.DISABLED)
+        
+        
         
     def choose_rock(self):
-        tkinter.messagebox.showinfo("Info", "You chose rock.")
+        '''
+        '''
+        self.user_choice_entry.configure(state= tk.NORMAL)
+        self.user_choice_entry.delete(0, tk.END)
+        self.user_choice_entry.insert(0, "ROCK")
+        self.user_choice_entry.configure(state= tk.DISABLED)
 
+        #tkinter.messagebox.showinfo("Info", "You chose rock.")
     
     def choose_paper(self):
-        tkinter.messagebox.showinfo("Info", "You chose paper")
+        '''
+        '''
+        self.user_choice_entry.configure(state= tk.NORMAL)
+        self.user_choice_entry.delete(0, tk.END)
+        self.user_choice_entry.insert(0, "PAPER")
+        self.user_choice_entry.configure(state= tk.DISABLED)
+        
+        #tkinter.messagebox.showinfo("Info", "You chose paper")
 
     
     def choose_scissors(self):
-        tkinter.messagebox.showinfo("Info", "You chose Scissors")
+        '''
+        '''
+        self.user_choice_entry.configure(state= tk.NORMAL)
+        self.user_choice_entry.delete(0, tk.END)
+        self.user_choice_entry.insert(0, "SCISSORS")
+        self.user_choice_entry.configure(state= tk.DISABLED)
+        
+        #tkinter.messagebox.showinfo("Info", "You chose Scissors")
+        
+    def pc_choose(self):
+        '''
+        '''
+        pc_choices = ["ROCK", "PAPER", "SCISSORS"]
+        random_choice = random.choice(pc_choices)
+
+        self.pc_choice_entry.configure(state= tk.NORMAL)
+        self.pc_choice_entry.delete(0, tk.END)
+        self.pc_choice_entry.insert(0, random_choice)
+        self.pc_choice_entry.configure(state= tk.DISABLED)
+        
+    def select_winner(self):
+        '''
+        '''
+        player_choice = self.user_choice_entry.get()
+        print("Player chose:", player_choice)
+        
+        pc_choice = self.pc_choice_entry.get()
+        print("PC chose:", pc_choice)
+        
+        if player_choice == "ROCK":
+            return self.rock(pc_choice)
+        elif player_choice == "PAPER":
+            return self.paper(pc_choice)
+        elif player_choice == "SCISSORS":
+            return self.scissors(pc_choice)
+           
+    def rock(self, pc_choice):
+        if pc_choice == "ROCK":
+            return "It is a draw!"
+        elif pc_choice == "PAPER":
+            return "YOU LOOSE :("
+        elif pc_choice == "SCISSORS":
+            return "YOU WIN :D"
+    
+    def paper(self, pc_choice):
+        if pc_choice == "ROCK":
+            return "YOU WIN :D"
+        elif pc_choice == "PAPER":
+            return "It is a draw!"
+        elif pc_choice == "SCISSORS":
+            return "YOU LOOSE :("
+    
+    def scissors(self, pc_choice):
+        if pc_choice == "ROCK":
+            return "YOU LOOSE :("
+        elif pc_choice == "PAPER":
+            return "YOU WIN :D"
+        elif pc_choice == "SCISSORS":
+            return "It is a draw!"
             
     def show_about(self):
         help_msg = "This a Rock Paper Scissors game using Tkinter\n\nWritten by: Gabriel dos Reis\n\nDate: 2023"
